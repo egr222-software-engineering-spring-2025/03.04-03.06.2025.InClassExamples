@@ -3,6 +3,9 @@ import java.awt.Graphics;
 public class PointClient {
 
     public static void main(String[] args) {
+		Point.setEarthquakeEpicenter(new Point(25,25));
+		Point.setEarthquakeImpactRadiusInPixels(125);
+
 		DrawingPanel panel = new DrawingPanel(300,300);
 		Graphics g = panel.getGraphics();
 
@@ -26,6 +29,7 @@ public class PointClient {
 		System.out.println("p2: " + p2);
 		System.out.println("p3: " + p3);
 
+		Point.drawEarthquakeEpicenter(g);
 		p1.draw(g);
 		p2.draw(g);
 		p3.draw(g);

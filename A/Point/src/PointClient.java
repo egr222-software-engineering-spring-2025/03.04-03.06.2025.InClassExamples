@@ -6,6 +6,9 @@ public class PointClient {
 		DrawingPanel panel = new DrawingPanel(300,300);
 		Graphics g = panel.getGraphics();
 
+		Point.setEarthquakeOrigin(new Point(25,25));
+		Point.setEarthquakeImpactRadiusInPixels(120);
+
 	    Point p1 = new Point(50,65);
 	    Point p2 = new Point(104,83);
 	    Point p3 = new Point(154.0, 75);
@@ -26,6 +29,7 @@ public class PointClient {
 		System.out.println("p2: " + p2);
 		System.out.println("p3: " + p3);
 
+		Point.drawEarthquakeOrigin(g);
 		p1.draw(g);
 		p2.draw(g);
 		p3.draw(g);
