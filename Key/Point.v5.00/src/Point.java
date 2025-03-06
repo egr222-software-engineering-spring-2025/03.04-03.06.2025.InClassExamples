@@ -11,9 +11,9 @@ public class Point {
     // use static to define earthquakeImpactDistance because it should be a function of the earthquake and not the point (i.e., magnitude)
     private static int earthquakeImpactRadius = 50;
 
-    public Point(int initialX, int initialY) {
-        x = initialX;
-        y = initialY;
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     public Point() {
@@ -95,8 +95,6 @@ public class Point {
     }
 
     public double distanceFromEarthquakeOrigin() {
-        int deltaX = x - earthquakeOrigin.x;
-        int deltaY = y - earthquakeOrigin.y;
-        return Math.sqrt( deltaX * deltaX + deltaY * deltaY );
+        return distanceTo(earthquakeOrigin);
     }
 }
